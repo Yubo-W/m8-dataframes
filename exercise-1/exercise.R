@@ -21,8 +21,12 @@ dinner <- meals[["dinner"]]
 number <- list(lengths(meals))
 
 # Write a function that adds pizza to every meal
-add <- function(pizza) {
-  meals <- lapply()
+add <- function(ls) {
+  for (index in 1:length(ls)) {
+    index <- c(ls[index], "pizza")
+  }
+  return(ls)
 }
 
 # Add pizza to every meal!
+meals <- add(meals)

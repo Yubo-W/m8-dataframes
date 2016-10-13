@@ -10,16 +10,19 @@ points.allowed <- c(10, 9, 18, 17)
 scoreboard <- data.frame(points.scored, points.allowed)
 
 # Create a new column "diff" that is the difference in points
-score.diff <- points.scored - points.allowed
-scoreboard <- data.frame(scoreboard, score.diff)
+# score.diff <- points.scored - points.allowed
+# scoreboard <- data.frame(scoreboard, score.diff)
+scoreboard$diff <- scoreboard$points.scored - scoreboard$points.allowed
 
 # Create a new column "won" which is TRUE if the Seahawks wom
-outcome <- score.diff > 0
-scoreboard <- data.frame(scoreboard, outcome)
+# outcome <- score.diff > 0
+# scoreboard <- data.frame(scoreboard, outcome)
+scoreboard$won <- scoreboard$diff > 0
 
 # Create a vector of the opponents
 opponents <- c("Dolphins", "Rams", "49ers", "Jets")
 
 # Assign your dataframe rownames of their opponents
-scoreboard <- data.frame(scoreboard, opponents)
+# scoreboard <- data.frame(scoreboard, opponents)
+rownames(scoreboard) <- opponents
 
